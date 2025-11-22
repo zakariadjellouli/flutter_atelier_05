@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_navigation/page_infos.dart';
 
 class PageAccueil extends StatelessWidget {
   const PageAccueil({super.key});
@@ -11,7 +12,18 @@ class PageAccueil extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("bienvenue sur la page d'accueil !")],
+            children: [
+              Text("bienvenue sur la page d'accueil !"),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageInfos()),
+                  );
+                },
+                child: Text("aller a la page infos"),
+              ),
+            ],
           ),
         ),
       ),
